@@ -7,7 +7,7 @@
 
   let opacityPercent = 0;
   let threshold = 0.75;
-  let modifier = 0.5;
+  let modifier = 0;
   let ol = 0;
   let wt = 0;
 

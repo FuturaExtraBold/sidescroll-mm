@@ -6,7 +6,7 @@
 
   let $pips;
 
-  let thisSection;
+  let $thisSection;
   let windowW = 0;
   let offsetLeft = 0;
   let currentSection = 0;
@@ -19,10 +19,10 @@
 
   function handleScroll() {
     $sections.each(function(index) {
-      thisSection = $(this);
-      offsetLeft = thisSection.offset().left;
+      $thisSection = $(this);
+      offsetLeft = $thisSection.offset().left;
       if (offsetLeft >= -(windowW * 0.25) && offsetLeft < windowW * 0.25) {
-        currentSection = thisSection.index();
+        currentSection = $thisSection.index();
       } else {
         return;
       }
@@ -30,14 +30,22 @@
     changePip(currentSection);
   }
 
-  function changePip(index) {
-    TweenMax.to($pips.children(".progress__pip-inside"), 0.2, { backgroundColor: "transparent" });
-    TweenMax.to($pips.eq(index).children(".progress__pip-inside"), 0.4, { backgroundColor: "#ffffff" });
-  }
-
   function handleResize() {
     windowW = $window.outerWidth();
   }
+
+  function changePip(index) {
+    TweenMax.to($pips.children(".progress__pip-inside"), 0.2, { backgroundColor: "rgba(255,255,255,0.1)" });
+    TweenMax.to($pips.eq(index).children(".progress__pip-inside"), 0.4, { backgroundColor: "#ffffff" });
+  }
+
+  function handlePipClick(event) {
+    console.log("this:", $(this).index());
+    $thisSection = $sections.eq($(this).index());
+    TweenMax.to($window, 1, { scrollTo: $thisSection.position().left, ease: "easeInOutExpo" })
+  }
+
+  $pips.on("click", handlePipClick);
 
   $window.on("resize", handleResize);
   $window.on("scroll", handleScroll);

@@ -1,6 +1,6 @@
 .progress {
   position: fixed;
-  bottom: 40px;
+  bottom: 0;
   left: 25%;
   display: flex;
   flex-direction: row;
@@ -8,17 +8,17 @@
   align-content: stretch;
   justify-content: space-around;
   width: 50%;
-  height: 2px;
   &__pip {
     position: relative;
     width: 100%;
-    height: 100%;
     margin-right: 2%;
-    background-color: rgba(255,255,255,0.1);
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    padding: 40px 0;
+    cursor: pointer;
   }
   &__pip-inside {
-    @include fit;
+    height: 2px;
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
   }
   &__pip:last-child {
     margin: 0;

@@ -1,0 +1,46 @@
+// Helper to convert straight number to percentage
+@function convertify($number) {
+  @if type-of($number) == "number" and unitless($number) {
+    @return percentage($number / $grid-column-count);
+  }
+  @return $number;
+}
+
+// Rows
+@mixin grid-row(
+  $direction: ltr,
+  $align: stretch,
+  $justify: flex-start,
+  $grid-gutter: $gutter,
+  $wrap: wrap
+) {
+  display: flex;
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $justify;
+  margin-right: -($grid-gutter/2);
+  margin-left: -($grid-gutter/2);
+  @if $direction == ltr {
+    flex-direction: row;
+  } @else {
+    flex-direction: row-reverse;
+  }
+}
+
+// Columns
+@mixin grid-col($width: 100%, $align: stretch, $grid-gutter: $gutter) {
+  flex: none;
+  width: convertify($width);
+  padding-right: $grid-gutter/2;
+  padding-left: $grid-gutter/2;
+  align-self: $align;
+}
+
+// Offsets
+@mixin grid-offset-left($offset: 1) {
+  margin-left: convertify($offset);
+}
+
+@mixin grid-offset-right($offset: 1) {
+  margin-right: convertify($offset);
+}

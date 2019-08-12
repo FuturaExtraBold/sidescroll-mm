@@ -1,0 +1,29 @@
+.center {
+  @include fit;
+  &__line {
+    position: absolute;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    background-color: red;
+  }
+  &__line--one-quarter {
+    top: 25%;
+    left: 25%;
+  }
+  &__line--half {
+    top: 50%;
+    left: 50%;
+  }
+  &__line--three-quarter {
+    top: 75%;
+    left: 75%;
+  }
+  &__line--horizontal {
+    width: 100px;
+    height: 1px;
+  }
+  &__line--vertical {
+    width: 1px;
+    height: 100px;
+  }
+}

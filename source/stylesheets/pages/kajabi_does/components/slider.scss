@@ -1,0 +1,25 @@
+.slider {
+  position: absolute;
+  width: 100vw;
+  &__fixed {
+    @include fit;
+    position: fixed;
+    top: $header-height;
+    height: calc(100% - #{ $header-height });
+  }
+  &__content {
+    @include fit;
+  }
+  &__overlay {
+    @include fit;
+    background-color: #000000;
+  }
+}
+@media (max-width: $sm-max) {
+  .slider {
+    &__fixed {
+      position: relative;
+      display: block;
+    }
+  }
+}

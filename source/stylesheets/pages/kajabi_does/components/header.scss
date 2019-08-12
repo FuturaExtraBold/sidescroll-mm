@@ -1,0 +1,16 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid #111111;
+  background-color: #000000;
+  &__container {
+    @include container;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+  }
+  &__logo {
+    width: 26px;
+  }
+}

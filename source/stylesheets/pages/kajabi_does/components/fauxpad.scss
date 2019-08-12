@@ -1,0 +1,72 @@
+$fauxpad-outer-frame-width: 5px;
+$fauxpad-frame-width: 30px;
+$fauxpad-content-width: 1024px;
+$fauxpad-content-height: 768px;
+$fauxpad-width: $fauxpad-content-width + $fauxpad-frame-width * 2 + $fauxpad-outer-frame-width * 2;
+$fauxpad-height: $fauxpad-content-height + $fauxpad-frame-width * 2 + $fauxpad-outer-frame-width * 2;
+
+.fauxpad {
+  position: relative;
+  width: $fauxpad-width;
+  height: $fauxpad-height;
+  &__overflow {
+    @include fit;
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+    box-shadow: 20px 20px 100px 0 rgba(0,0,0,0.6);
+  }
+  &__button {
+    position: absolute;
+    border-radius: 3px;
+    background-color: #bbbbbb;
+  }
+  &__power {
+    top: 50px;
+    left: -4px;
+    width: 10px;
+    height: 50px;
+  }
+  &__volume {
+    top: -4px;
+    width: 40px;
+    height: 10px;
+  }
+  &__volume--1 {
+    left: 50px;
+  }
+  &__volume--2 {
+    left: 100px;
+  }
+  &__outer-frame {
+    @include fit;
+    border-radius: 34px;
+    background-color: #888888;
+  }
+  &__frame {
+    @include fit;
+    top: $fauxpad-outer-frame-width;
+    left: $fauxpad-outer-frame-width;
+    width: calc(100% - #{$fauxpad-outer-frame-width * 2});
+    height: calc(100% - #{$fauxpad-outer-frame-width * 2});
+    border: $fauxpad-frame-width solid black;
+    border-radius: $fauxpad-frame-width;
+  }
+  &__background {
+    @include fit;
+    top: $fauxpad-frame-width + $fauxpad-outer-frame-width;
+    left: $fauxpad-frame-width + $fauxpad-outer-frame-width;
+    width: $fauxpad-content-width;
+    height: $fauxpad-content-height;
+    background-color: #000000;
+  }
+  &__content {
+    @include fit;
+    top: $fauxpad-frame-width + $fauxpad-outer-frame-width;
+    left: $fauxpad-frame-width + $fauxpad-outer-frame-width;
+    width: $fauxpad-content-width;
+    height: $fauxpad-content-height;
+    border-radius: 10px;
+    background-color: blue;
+  }
+}

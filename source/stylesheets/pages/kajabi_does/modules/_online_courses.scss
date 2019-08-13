@@ -1,9 +1,26 @@
 .online-courses {
-  background-color: #11141a;
+  max-width: 1600px;
+  &__background {
+    @include fit;
+    background-color: #11141a;
+  }
   &__title {
     color: #ffffff;
   }
   &__description {
     color: #858585;
+  }
+  &__content {
+    position: relative;
+  }
+  .course {
+    position: absolute;
+    z-index: 10;
+    left: 60px;
+  }
+  .instructor {
+    position: absolute;
+    top: 100px;
+    right: 0;
   }
 }

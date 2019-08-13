@@ -3,6 +3,7 @@
   let $window = $(window);
   let windowWidth = $window.outerWidth();
   let $oc = $(".online-courses");
+  let $ocb = $(".online-courses__background");
 
   let opacityPercent = 0;
   let windowStart = 0.75;
@@ -20,7 +21,7 @@
     if (offsetLeft >= windowWidth * windowStart) opacityPercent = 0;
     if (offsetLeft <= windowWidth * windowEnd) opacityPercent = 1;
     console.log(opacityPercent);
-    TweenMax.set($oc, { opacity: opacityPercent });
+    TweenMax.set($ocb, { opacity: opacityPercent });
   });
 
 })(jQuery);

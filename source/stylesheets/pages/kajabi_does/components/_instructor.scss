@@ -1,0 +1,31 @@
+.instructor {
+  position: relative;
+  display: inline-block;
+  overflow: auto;
+  width: 320px;
+  padding: 50px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: $box-shadow-default;
+  &__image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+  }
+  &__title {
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: #000000;
+  }
+  &__blurb {
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 2px;
+    color: $color-primary;
+  }
+}

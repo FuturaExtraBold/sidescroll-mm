@@ -1,0 +1,28 @@
+.kajabi-replaces {
+  margin: 30px 0 0;
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    color: #ffffff;
+  }
+  svg {
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    opacity: 0.6;
+    path {
+      fill: #ffffff;
+    }
+  }
+}
+.kajabi-replaces--inverted {
+  .kajabi-replaces__title {
+    color: #252525;
+  }
+  svg {
+    path {
+      fill: #252525;
+    }
+  }
+}

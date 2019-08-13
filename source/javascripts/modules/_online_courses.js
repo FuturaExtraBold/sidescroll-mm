@@ -24,4 +24,7 @@
     TweenMax.set($ocb, { opacity: opacityPercent });
   });
 
+  TweenMax.to($(".instructor"), 5, { y: "-10", ease: "easeInOutQuad", repeat: -1, yoyo: true });
+  TweenMax.to($(".course"), 5, { y: "10", ease: "easeInOutQuad", repeat: -1, yoyo: true, delay: 2.5 });
+
 })(jQuery);

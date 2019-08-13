@@ -1,0 +1,27 @@
+.table-container {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px 20px;
+  text-align: left;
+  border: $border-default;
+}
+th {
+  font-weight: normal;
+  color: $text-dark;
+  background-color: $color-light;
+}
+td {
+  font-weight: normal;
+  color: $text-default;
+  background-color: transparent;
+}

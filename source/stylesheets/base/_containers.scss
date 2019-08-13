@@ -1,0 +1,26 @@
+$container-gutter: 20px;
+
+.container {
+  position: relative;
+  max-width: $xl-min - ($container-gutter * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-gutter;
+  padding-left: $container-gutter;
+  &--fluid {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.container:before,
+.container:after {
+  @include clearfix;
+}
+
+.main-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #ffffff;
+}

@@ -1,0 +1,100 @@
+$grid-gutter-small: 20px;
+$grid-gutter: 40px;
+$grid-gutter-large: 80px;
+$grid-gutter-extra-large: 120px;
+
+@mixin gutter-maker($size) {
+  margin-right: -$size / 2;
+  margin-left: -$size / 2;
+   > [class*="col"] {
+    padding-right: $size / 2;
+    padding-left: $size / 2;
+  }
+}
+
+.grid {
+  @include gutter-maker($grid-gutter);
+  font-size: 0;
+  text-align: left;
+   > [class*="col"] {
+    font-size: $font-size-default;
+    position: relative;
+    display: inline-block;
+    min-height: 1px;
+    vertical-align: top;
+  }
+}
+
+.grid--flush {
+  @include gutter-maker(0);
+}
+.grid--gutter-small {
+  @include gutter-maker($grid-gutter-small);
+}
+.grid--gutter-large {
+  @include gutter-maker($grid-gutter-large);
+}
+.grid--gutter-extra-large {
+  @include gutter-maker($grid-gutter-extra-large);
+}
+@media (max-width: $lg-max) {
+  .grid--gutter-medium {
+    @include gutter-maker($grid-gutter);
+  }
+  .grid--gutter-large {
+    @include gutter-maker($grid-gutter);
+  }
+  .grid--gutter-extra-large {
+    @include gutter-maker($grid-gutter);
+  }
+}
+
+.grid--align-middle {
+   > [class*="col"] {
+    vertical-align: middle;
+  }
+}
+.grid--align-center {
+  text-align: center;
+}
+
+[class*="col"] {
+  width: 100%;
+}
+
+$sizes: (
+  sm: $sm-min,
+  md: $md-min,
+  lg: $lg-min,
+  xl: $xl-min
+);
+
+$tag: "" "-offset" "-push" "-pull";
+$prop: "width" "margin-left" "left" "right";
+
+@mixin col-sizer($res) {
+  @for $i from 1 through length($prop) {
+    .col-#{$res}#{nth($tag, $i)}-1    { #{nth($prop, $i)}: 8.333333%; }
+    .col-#{$res}#{nth($tag, $i)}-2    { #{nth($prop, $i)}: 16.666667%; }
+    .col-#{$res}#{nth($tag, $i)}-3    { #{nth($prop, $i)}: 25%; }
+    .col-#{$res}#{nth($tag, $i)}-4    { #{nth($prop, $i)}: 33.333333%; }
+    .col-#{$res}#{nth($tag, $i)}-5    { #{nth($prop, $i)}: 41.666667%; }
+    .col-#{$res}#{nth($tag, $i)}-6    { #{nth($prop, $i)}: 50%; }
+    .col-#{$res}#{nth($tag, $i)}-7    { #{nth($prop, $i)}: 58.333333%; }
+    .col-#{$res}#{nth($tag, $i)}-8    { #{nth($prop, $i)}: 66.666667%; }
+    .col-#{$res}#{nth($tag, $i)}-9    { #{nth($prop, $i)}: 75%; }
+    .col-#{$res}#{nth($tag, $i)}-10   { #{nth($prop, $i)}: 83.333333%; }
+    .col-#{$res}#{nth($tag, $i)}-11   { #{nth($prop, $i)}: 91.666667%; }
+    .col-#{$res}#{nth($tag, $i)}-12   { #{nth($prop, $i)}: 100%; }
+
+    .col-#{$res}#{nth($tag, $i)}-1-10 { #{nth($prop, $i)}: 10%; }
+    .col-#{$res}#{nth($tag, $i)}-1-8  { #{nth($prop, $i)}: 12.5%; }
+  }
+}
+
+@include col-sizer(xs);
+@each $break, $size in $sizes {
+  @media (min-width: #{$size}) {
+    @include col-sizer($break);
+  }
+}

@@ -1,0 +1,43 @@
+// Standard Colors
+$color-light: #f7f8f9;
+$color-primary: #2e91fc;
+$color-danger: #e74c3c;
+$color-lighter: #748493;
+$color-light-blue: #f6f9fc;
+$color-dark-blue: #0c3160;
+$color-middle-blue: #1e4474;
+$color-disruptive: #cf9c35;
+$color-border: #e5e9ed;
+
+// Text Colors
+$text-light: #748493;
+$text-default: #556370;
+$text-dark: #373f47;
+
+// Typography
+$font-family-default: "proxima-nova", sans-serif;
+$font-size-default: 2.0rem;
+$font-size-input: 1.8rem;
+
+// Elements
+$border-default: 1px solid $color-border;
+$border-dark: 1px solid darken($color-border, 10%);
+$border-radius-default: 5px;
+$box-shadow-default: 0 4px 18px 2px rgba(0,0,0,0.3);
+$box-shadow-light: 0 5px 10px 1px rgba(0,0,0,0.03);
+$box-shadow-light-hover: 0 20px 40px 4px rgba(0,0,0,0.08);
+$box-shadow-medium: 0 4px 10px 0 rgba(21, 21, 21, 0.1);
+$box-shadow-large: 0 10px 20px 0 rgba(0,0,0,0.1);
+
+// Tweens
+$ease-in-out-expo: cubic-bezier(1,0,0,1);
+$transition-default: all 0.2s $ease-in-out-expo;
+$transition-card-stack: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+// Header
+$header-height-desktop: 80px;
+$header-height-mobile: 60px;
+
+// Hello Bar
+$hello-bar-height: 45px;
+$hello-bar-height-mobile: 60px;

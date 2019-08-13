@@ -42,7 +42,7 @@
   function handlePipClick(event) {
     console.log("this:", $(this).index());
     $thisSection = $sections.eq($(this).index());
-    TweenMax.to($window, 1, { scrollTo: $thisSection.position().left, ease: "easeInOutExpo" })
+    TweenMax.to($window, 1, { scrollTo: $thisSection.position().left - (windowW / 2 - $thisSection.outerWidth() / 2), ease: "easeInOutExpo" })
   }
 
   $pips.on("click", handlePipClick);

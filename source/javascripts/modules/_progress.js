@@ -7,7 +7,7 @@
   let $pips;
 
   let $thisSection;
-  let windowW = 0;
+  let windowWidth = 0;
   let offsetLeft = 0;
   let currentSection = 0;
 
@@ -20,8 +20,8 @@
   function handleScroll() {
     $sections.each(function(index) {
       $thisSection = $(this);
-      offsetLeft = $thisSection.offset().left;
-      if (offsetLeft >= -(windowW * 0.25) && offsetLeft < windowW * 0.25) {
+      offsetLeft = $thisSection.offset().left + $thisSection.outerWidth() / 2;
+      if (offsetLeft >= windowWidth / 2 - 100 && offsetLeft < windowWidth / 2 + 100) {
         currentSection = $thisSection.index();
       } else {
         return;
@@ -31,7 +31,7 @@
   }
 
   function handleResize() {
-    windowW = $window.outerWidth();
+    windowWidth = $window.outerWidth();
   }
 
   function changePip(index) {
@@ -42,7 +42,7 @@
   function handlePipClick(event) {
     console.log("this:", $(this).index());
     $thisSection = $sections.eq($(this).index());
-    TweenMax.to($window, 1, { scrollTo: $thisSection.position().left - (windowW / 2 - $thisSection.outerWidth() / 2), ease: "easeInOutExpo" })
+    TweenMax.to($window, 1, { scrollTo: $thisSection.position().left - (windowWidth / 2 - $thisSection.outerWidth() / 2), ease: "easeInOutExpo" })
   }
 
   $pips.on("click", handlePipClick);

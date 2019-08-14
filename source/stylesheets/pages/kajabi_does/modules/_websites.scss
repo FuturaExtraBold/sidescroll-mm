@@ -1,9 +1,9 @@
 .websites {
-  max-width: 1600px;
+  max-width: 1200px;
   background-color: #eeeeee;
   &__background {
     @include fit;
-    width: 25%;
+    width: 35%;
     background-color: #f2f2f2;
   }
   &__title {
@@ -14,5 +14,12 @@
   }
   &__content {
     position: relative;
+  }
+  &__handwriting {
+    @include handwriting;
+    font-size: 2.0rem;
+    margin: 20px 0 0;
+    text-align: center;
+    color: #383838;
   }
 }

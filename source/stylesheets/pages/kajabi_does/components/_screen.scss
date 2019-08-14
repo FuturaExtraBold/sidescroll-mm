@@ -1,0 +1,27 @@
+.screen {
+  padding: 24px 8px 8px;
+  border-radius: 4px;
+  background-color: #c5c5c5;
+  box-shadow: 10px 10px 25px 4px rgba(0,0,0,0.1);
+  &__pip {
+    position: absolute;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+  &__pip--1 {
+    left: 8px;
+  }
+  &__pip--2 {
+    left: 20px;
+  }
+  &__pip--3 {
+    left: 32px;
+  }
+  .embed {
+    overflow: auto;
+    border-radius: 2px;
+  }
+}

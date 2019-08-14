@@ -1,3 +1,19 @@
 <section class="section email-marketing">
-  <h1>Kajabi Does Email Marketing.</h1>
+  <div class="container email-marketing__container">
+    <div class="grid grid--align-middle grid--gutter-large">
+      <div class="col-sm-7">
+        <div class="email-marketing__content">
+          <%= partial "partials/pages/kajabi_does/components/email_sequence" %>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <p class="heading--1 section__title email-marketing__title">Kajabi Does<br/>Email Marketing.</h1>
+        <p class="section__description email-marketing__description">Communicate with your list and nurture the subscriber and customer relationship with email broadcasts and followup sequences. Use sophisticated segmentation to provide relevant content that give your prospects the right message at the right time. Kajabi email marketing makes it easy to connect more, so you can sell more.</p>
+        <%= partial "partials/pages/kajabi_does/components/kajabi_replaces", locals: {
+          appended_classes: "kajabi-replaces--inverted"
+        } %>
+        <%= partial "partials/pages/kajabi_does/components/cta" %>
+      </div>
+    </div>
+  </div>
 </section>

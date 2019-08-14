@@ -1,3 +1,19 @@
 <section class="section marketing-funnels">
-  <h1>Kajabi Does Marketing Funnels.</h1>
+  <div class="container marketing-funnels__container">
+    <div class="grid grid--align-middle grid--gutter-large">
+      <div class="col-sm-4">
+        <div class="marketing-funnels__content">
+          <h1>Marketing Funnels</h1>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <p class="heading--1 section__title marketing-funnels__title">Kajabi Does<br/>Marketing Funnels.</h1>
+        <p class="section__description marketing-funnels__description">Your online business needs a way to automatically engage and convert new customers from first click to final sale. Marketing Funnels inside Kajabi empowers you to do just that. Collect, nurture, and convert leads into paying customers of your products, all in one automated process. What used to take an entire tech team weeks of work to build out has now been reduced to just a few clicks you can do yourself to grow your online business.</p>
+        <%= partial "partials/pages/kajabi_does/components/kajabi_replaces", locals: {
+          appended_classes: "kajabi-replaces--inverted"
+        } %>
+        <%= partial "partials/pages/kajabi_does/components/cta" %>
+      </div>
+    </div>
+  </div>
 </section>

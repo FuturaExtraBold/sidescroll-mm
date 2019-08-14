@@ -1,3 +1,20 @@
 <section class="section landing-pages">
-  <h1>Kajabi Does Landing Pages.</h1>
+  <div class="container landing-pages__container">
+    <div class="grid grid--gutter-large">
+      <div class="col-sm-7">
+        <div class="landing-pages__content">
+          <%= partial "partials/pages/kajabi_does/components/screen_desktop" %>
+          <p class="landing-pages__handwriting">Optimized for all sizes!</p>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <p class="heading--1 section__title landing-pages__title">Kajabi Does<br/>Landing Pages.</h1>
+        <p class="section__description landing-pages__description">Capture leads and grow your list with specialized, high-converting landing pages. Just choose any of our optimized templates to create opt-in pages, sales pages, webinar pages, and more, then add your own messaging and branding. Building your audience has never been easier.</p>
+        <%= partial "partials/pages/kajabi_does/components/kajabi_replaces", locals: {
+          appended_classes: "kajabi-replaces--inverted"
+        } %>
+        <%= partial "partials/pages/kajabi_does/components/cta" %>
+      </div>
+    </div>
+  </div>
 </section>

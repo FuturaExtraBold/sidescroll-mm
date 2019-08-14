@@ -21,7 +21,7 @@
     $sections.each(function(index) {
       $thisSection = $(this);
       offsetLeft = $thisSection.offset().left + $thisSection.outerWidth() / 2;
-      if (offsetLeft >= windowWidth / 2 - 100 && offsetLeft < windowWidth / 2 + 100) {
+      if (offsetLeft >= windowWidth / 2 - 300 && offsetLeft < windowWidth / 2 + 300) {
         currentSection = $thisSection.index();
       } else {
         return;

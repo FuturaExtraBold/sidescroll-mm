@@ -1,0 +1,24 @@
+.funnel {
+  position: relative;
+  &__overlay {
+    @include fit;
+    top: 25%;
+    height: 75%;
+    border-radius: 2px;
+    background-color: #ffffff;
+  }
+  &__image {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    border-radius: 2px;
+  }
+  &__content {
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
